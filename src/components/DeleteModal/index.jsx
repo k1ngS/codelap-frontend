@@ -1,3 +1,4 @@
+import Modal from '../Modal';
 import * as S from './styles'
 
 const DeleteModal = ({ isOpen, onCancel, onConfirm, isDeleting }) => {
@@ -6,8 +7,7 @@ const DeleteModal = ({ isOpen, onCancel, onConfirm, isDeleting }) => {
   }
 
   return (
-    <S.Overlay>
-      <S.Container>
+    <Modal isOpen={isOpen}>
         <S.Title>Are you sure you want to delete this item?</S.Title>
         <S.Actions>
           <S.Button variant="cancel" onClick={onCancel}>
@@ -17,8 +17,7 @@ const DeleteModal = ({ isOpen, onCancel, onConfirm, isDeleting }) => {
             {isDeleting ? 'Deleting...' : 'Delete'}
           </S.Button>
         </S.Actions>
-      </S.Container>
-    </S.Overlay>
+    </Modal>
   )
 }
 
