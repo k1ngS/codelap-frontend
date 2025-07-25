@@ -1,23 +1,30 @@
-import { useState } from "react";
+import SignupModal from "./components/SignupModal";
+import { UserProvider, useUser } from "./context/UserContext";
+import { GlobalStyles } from "./styles/GlobalStyles";
 
-function App() {
-	const [count, setCount] = useState(0);
+const AppContent = () => {
+	const { isLoggedIn, username, logout } = useUser();
+
+	if (!isLoggedIn) {
+		return <SignupModal />
+	}
 
 	return (
-		<>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button type="button" onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		<div>
+			<h1>CodeLeap Network</h1>
+			<p>Bem-vindo, {username}</p>
+			<button type="button" onClick={logout}>Logout</button>
+			<p>MainScreen será implementado em breve...</p>
+		</div>
+	)
+}
+
+function App() {
+	return (
+		<UserProvider>
+			<GlobalStyles />
+			<AppContent />
+		</UserProvider>
 	);
 }
 
