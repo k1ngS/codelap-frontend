@@ -1,4 +1,3 @@
-// src/components/MainScreen/styles.js
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -11,7 +10,6 @@ export const Content = styled.div`
   margin: 0 auto;
   padding: 24px;
 `
-// --- NOVOS ESTILOS ABAIXO ---
 
 export const PostList = styled.div`
   margin-top: 24px;
