@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background: white;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #999999;
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 16px;
@@ -71,12 +71,13 @@ export const ButtonContainer = styled.div`
 export const CreateButton = styled.button`
   background-color: ${props => props.disabled ? '#CCCCCC' : '#7695EC'};
   color: white;
-  padding: 8px 32px;
+  padding: 7px 30px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 700;
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   transition: background-color 0.2s;
+  width: 120px;
 
   &:hover:not(:disabled) {
     background-color: #5577DD;

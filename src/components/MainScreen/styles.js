@@ -8,11 +8,11 @@ export const Container = styled.div`
 export const Content = styled.div`
   max-width: 800px;
   margin: 0 auto;
+  background-color: #FFFFFF;
   padding: 24px;
 `
 
 export const PostList = styled.div`
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -22,6 +22,7 @@ export const PostItem = styled.div`
   border: 1px solid #999999;
   border-radius: 16px;
   background-color: #FFFFFF;
+  overflow: hidden;
 `;
 
 export const PostHeader = styled.header`
@@ -61,6 +62,7 @@ export const PostContent = styled.div`
   .post-meta {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #777777;
     font-size: 18px;
     font-weight: 700;
@@ -68,6 +70,7 @@ export const PostContent = styled.div`
 
     span:first-child {
       font-weight: 700;
+      color: #777777;
     }
 
     span:last-child {
@@ -79,5 +82,6 @@ export const PostContent = styled.div`
     font-size: 18px;
     line-height: 1.4;
     word-wrap: break-word;
+    color: #000000;
   }
 `;
