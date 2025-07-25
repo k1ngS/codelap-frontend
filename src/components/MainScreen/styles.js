@@ -5,9 +5,17 @@ export const Container = styled.div`
   min-height: 100vh;
 `
 
+export const ContentWrapper = styled.div`
+  background-color: #DDDDDD;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+`
+
 export const Content = styled.div`
   max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
   background-color: #FFFFFF;
   padding: 24px;
 `
@@ -27,7 +35,7 @@ export const PostItem = styled.div`
 
 export const PostHeader = styled.header`
   background-color: #7695EC;
-  color: white;
+  color: #FFFFFF;
   padding: 24px;
   border-radius: 16px 16px 0 0;
   display: flex;
@@ -37,6 +45,8 @@ export const PostHeader = styled.header`
   h2 {
     font-size: 22px;
     font-weight: 700;
+    margin: 0;
+    color: #FFFFFF;
   }
 `;
 
@@ -49,9 +59,13 @@ export const PostActions = styled.div`
     border: none;
     cursor: pointer;
     font-size: 20px;
+    color: #FFFFFF;
+    padding: 4px;
+    border-radius: 4px;
+    transition: opacity 0.2s;
 
     &:hover {
-        opacity: 0.8;
+      opacity: 0.8;
     }
   }
 `;
@@ -65,7 +79,6 @@ export const PostContent = styled.div`
     align-items: center;
     color: #777777;
     font-size: 18px;
-    font-weight: 700;
     margin-bottom: 16px;
 
     span:first-child {
@@ -74,7 +87,8 @@ export const PostContent = styled.div`
     }
 
     span:last-child {
-        font-weight: 400;
+      font-weight: 400;
+      color: #777777;
     }
   }
 
@@ -83,5 +97,6 @@ export const PostContent = styled.div`
     line-height: 1.4;
     word-wrap: break-word;
     color: #000000;
+    margin: 0;
   }
 `;

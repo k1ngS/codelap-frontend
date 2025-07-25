@@ -63,44 +63,46 @@ const MainScreen = () => {
 		<>
 			<S.Container>
 				<Header />
-				<S.Content>
-					<PostForm />
+				<S.ContentWrapper>
+					<S.Content>
+						<PostForm />
 
-					{isLoading && <p>Loading posts...</p>}
+						{isLoading && <p>Loading posts...</p>}
 
-					<PostList>
-						{posts?.map((post) => (
-							<PostItem key={post?.id}>
-								<PostHeader>
-									<h2>{post?.title}</h2>
-									{post?.username === username && (
-										<PostActions>
-											<button
-												type="button"
-												onClick={() => handleDeletePost(post?.id)}
-											>
-												<FaTrash color="white" />
-											</button>
-											<button
-												type="button"
-												onClick={() => handleEditPost(post)}
-											>
-												<FaEdit color="white" />
-											</button>
-										</PostActions>
-									)}
-								</PostHeader>
-								<PostContent>
-									<div className="post-meta">
-										<span>@{post?.username}</span>
-										<span>{formatTimeAgo(post?.created_datetime)}</span>
-									</div>
-									<p>{post?.content}</p>
-								</PostContent>
-							</PostItem>
-						))}
-					</PostList>
-				</S.Content>
+						<PostList>
+							{posts?.map((post) => (
+								<PostItem key={post?.id}>
+									<PostHeader>
+										<h2>{post?.title}</h2>
+										{post?.username === username && (
+											<PostActions>
+												<button
+													type="button"
+													onClick={() => handleDeletePost(post?.id)}
+												>
+													<FaTrash color="white" />
+												</button>
+												<button
+													type="button"
+													onClick={() => handleEditPost(post)}
+												>
+													<FaEdit color="white" />
+												</button>
+											</PostActions>
+										)}
+									</PostHeader>
+									<PostContent>
+										<div className="post-meta">
+											<span>@{post?.username}</span>
+											<span>{formatTimeAgo(post?.created_datetime)}</span>
+										</div>
+										<p>{post?.content}</p>
+									</PostContent>
+								</PostItem>
+							))}
+						</PostList>
+					</S.Content>
+				</S.ContentWrapper>
 			</S.Container>
 
 			<DeleteModal
