@@ -38,7 +38,7 @@ This application was developed as a frontend coding test for CodeLeap. It demons
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/k1ngS/codelap-frontend
+   git clone https://github.com/k1ngS/codelap-frontend.git
    cd codelap-frontend
    ```
 
